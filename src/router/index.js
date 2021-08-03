@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Posts  from "../components/pages/Posts.vue";
-import PostDetails  from "../components/pages/PostDetails.vue";
-import PageNotFound from "../components/pages/PageNotFound.vue";
+import AllPosts  from "../components/AllPosts.vue";
+import PostDetails  from "../components/PostDetails.vue";
+import PageNotFound from "../components/PageNotFound.vue";
 
 Vue.use(VueRouter)
 
@@ -12,7 +12,7 @@ const routes = [
   },
   {
     path: '/posts',
-    component: Posts,
+    component: AllPosts,
   },
   {
     path: '/posts/:id', 

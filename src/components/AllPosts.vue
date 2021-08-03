@@ -1,16 +1,16 @@
 <template>
 <div>
-  <base-post :posts="allPosts"></base-post>
+  <post-card :posts="allPosts"></post-card>
 </div>
   
 </template>
 
 <script>
-import { Service } from "../../service.js";
-import BasePost from '../ui/BasePost.vue';
+import { Service } from "../service.js";
+import PostCard from './PostCard.vue';
 
 export default {
-  components: { BasePost },
+  components: { PostCard },
   name: 'Posts',
   created() {
     this.getAllPosts();

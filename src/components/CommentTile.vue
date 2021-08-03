@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "baseComment",
+  name: "commentTile",
   props: ["comments"],
 };
 </script>

@@ -20,7 +20,7 @@
         <b-col cols="12" class="commentTitle">
           <h2 style="font-weight: 500">Comments</h2>
         </b-col>
-        <base-comment :comments="allComments"></base-comment>
+        <comment-tile :comments="allComments"></comment-tile>
       </b-row>
     </b-container>
     <h3 v-else>Loading....</h3>
@@ -28,13 +28,13 @@
 </template>
 
 <script>
-import { Service } from "../../service.js";
-import baseComment from "../ui/BaseComment.vue";
+import { Service } from "../service.js";
+import commentTile from "./CommentTile.vue";
 
 export default {
   name: "PostDetails",
   components: {
-    baseComment,
+    commentTile,
   },
   mounted() {
     this.getPostDetails();
@@ -59,10 +59,10 @@ export default {
     },
     getComments() {
       Service.get(`comments?postId=${this.postId}`)
-      .then((res) => {
-        this.allComments = res.data;
-      })
-      .catch((error) => console.log(error));
+        .then((res) => {
+          this.allComments = res.data;
+        })
+        .catch((error) => console.log(error));
     },
     background: function(postId) {
       return postId % 2 == 0 ? "#B5E0D9" : "#FFE6E6";
@@ -107,7 +107,6 @@ hr {
   width: 90%;
   border-top: 1px solid darkgray;
 }
-
 
 .commentTitle {
   font-size: 200%;
